@@ -11,10 +11,28 @@ var stringifyJSON = function(obj) {
     return 'null';
   } else if (typeof obj === 'string') {
     return("\"" + obj + "\"");
+  } else if (Array.isArray(obj)){
+    // if empty 
+    if (obj.length === 0) {
+      return '[]';
+    } else if(obj.length === 1){
+      return '[' + obj + ']';
+    }
+
+
+ // else {
+ //      var stringified = [];
+    
+ //      for (var i = 0; i < obj.length; i++) { 
+ //        stringified.push(stringifyJSON(obj[i]));
+
+ //      }
+ //      return stringified;
+ //    }
+ //  return("[" + obj + "]");
+ //    //if theres something in the arr
+
   }
-
-  
-
 
 };
 
